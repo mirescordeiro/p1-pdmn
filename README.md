@@ -14,3 +14,5 @@ Tamires Gomes de Oliveira Cordeiro | 2040482313023
 4. Instala [PrimeFlex](https://primeflex.org/installation#moduleloader)
 5. Importa tema lara-light-teal e primeflex
 6. Instala [Axios](https://axios-http.com/docs/intro)
+7. Cria componente de Busca
+8. Importa Busca no App
