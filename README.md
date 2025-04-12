@@ -16,3 +16,6 @@ Tamires Gomes de Oliveira Cordeiro | 2040482313023
 6. Instala [Axios](https://axios-http.com/docs/intro)
 7. Cria componente de Busca
 8. Importa Busca no App
+9. Cria componente LocalidadeLista
+10. Lista localidades fictícias
+11. Importa LocalidadeLista no App
