@@ -14,7 +14,7 @@ export default class Busca extends Component {
 
   aoEnviar = (event) => {
     event.preventDefault()
-    alert(this.state.termoDeBusca)
+    this.props.aoRealizarBusca(this.state.termoDeBusca)
     this.setState({ termoDeBusca: '' })
   }
 
