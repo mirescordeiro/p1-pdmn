@@ -27,8 +27,8 @@ class App extends React.Component {
       alert('Parece que você esqueceu de digitar.\nDigite um CEP para continuar.')
     } else {
       // Validações retiradas da documentação https://viacep.com.br/exemplo/javascript/
-      let cepFormatado = termo.replace(/\D/g, '');
-      let validaCEP = /^[0-9]{8}$/;
+      const cepFormatado = termo.replace(/\D/g, '');
+      const validaCEP = /^[0-9]{8}$/;
 
       if (validaCEP.test(cepFormatado)) {
         viaCep.get(`/${cepFormatado}/json/`).then(resultado => {
