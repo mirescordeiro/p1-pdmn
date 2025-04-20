@@ -19,3 +19,6 @@ Tamires Gomes de Oliveira Cordeiro | 2040482313023
 9. Cria componente LocalidadeLista
 10. Lista localidades fictícias
 11. Importa LocalidadeLista no App
+12. Envia termoDeBusca para o App
+13. Realiza chamada HTTP à API ViaCEP
+14. Adiciona tratamentos de erro na chamada HTTP
