@@ -5,22 +5,9 @@ import LocalidadeLista from './components/LocalidadeLista';
 import viaCep from './utils/viaCep';
 
 class App extends React.Component {
-  localidades = [
-    {
-      cep: '04094-050',
-      logradouro: 'Avenida Pedro Álvares Cabral',
-      bairro: 'Parque Ibirapuera',
-      localidade: 'São Paulo',
-      uf: 'SP',
-    },
-    {
-      cep: '55592-970',
-      logradouro: 'Rua dos Navegantes',
-      bairro: 'Vila de Porto de Galinhas',
-      localidade: 'Ipojuca',
-      uf: 'PE',
-    }
-  ];
+  state = {
+    localidades: []
+  }
 
   aoRealizarBusca = (termo) => {
     if (termo === '') {
@@ -35,7 +22,7 @@ class App extends React.Component {
           if (resultado.data.erro) {
             alert('Este CEP não foi encontrado.\nTente outro CEP.')
           } else {
-            console.log('chamada ViaCEP: ', resultado.data)
+            this.setState({ localidades: [resultado.data, ...this.state.localidades] })
           }
         }).catch(erro => {
           alert('Não foi possível consultar este CEP. Verifique se este CEP é válido e tente novamente.')
@@ -51,7 +38,7 @@ class App extends React.Component {
     return (
       <main>
         <Busca dica='Digite um CEP' aoRealizarBusca={this.aoRealizarBusca} />
-        <LocalidadeLista localidades={this.localidades} />
+        <LocalidadeLista localidades={this.state.localidades} />
       </main>
     )
   }

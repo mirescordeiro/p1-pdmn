@@ -22,3 +22,4 @@ Tamires Gomes de Oliveira Cordeiro | 2040482313023
 12. Envia termoDeBusca para o App
 13. Realiza chamada HTTP à API ViaCEP
 14. Adiciona tratamentos de erro na chamada HTTP
+15. Lista localidades buscadas
