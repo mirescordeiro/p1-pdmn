@@ -23,3 +23,7 @@ Tamires Gomes de Oliveira Cordeiro | 2040482313023
 13. Realiza chamada HTTP à API ViaCEP
 14. Adiciona tratamentos de erro na chamada HTTP
 15. Lista localidades buscadas
+16. Cria componente LocalidadeGrafico
+17. Instala [Chart.js](https://www.chartjs.org/)
+18. Mapeia estados
+19. Define paleta de cores
