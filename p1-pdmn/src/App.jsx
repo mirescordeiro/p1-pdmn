@@ -2,11 +2,13 @@ import React from 'react'
 
 import Busca from './components/Busca'
 import LocalidadeLista from './components/LocalidadeLista';
+import LocalidadeGrafico from './components/LocalidadeGrafico';
 import viaCep from './utils/viaCep';
 
 class App extends React.Component {
   state = {
-    localidades: []
+    localidades: [],
+    estados: [],
   }
 
   aoRealizarBusca = (termo) => {
@@ -22,7 +24,10 @@ class App extends React.Component {
           if (resultado.data.erro) {
             alert('Este CEP não foi encontrado.\nTente outro CEP.')
           } else {
-            this.setState({ localidades: [resultado.data, ...this.state.localidades] })
+            this.setState({
+              localidades: [resultado.data, ...this.state.localidades],
+              estados: [resultado.data, ...this.state.localidades].map((local) => local.uf)
+            })
           }
         }).catch(erro => {
           alert('Não foi possível consultar este CEP. Verifique se este CEP é válido e tente novamente.')
@@ -36,9 +41,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <main>
-        <Busca dica='Digite um CEP' aoRealizarBusca={this.aoRealizarBusca} />
-        <LocalidadeLista localidades={this.state.localidades} />
+      <main className='grid' >
+        <div className='col-6'>
+          <Busca dica='Digite um CEP' aoRealizarBusca={this.aoRealizarBusca} />
+          <LocalidadeLista localidades={this.state.localidades} />
+        </div>
+        <div className='col-6'>
+          <LocalidadeGrafico estados={this.state.estados} />
+        </div>
       </main>
     )
   }
