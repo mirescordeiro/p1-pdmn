@@ -27,3 +27,4 @@ Tamires Gomes de Oliveira Cordeiro | 2040482313023
 17. Instala [Chart.js](https://www.chartjs.org/)
 18. Mapeia estados
 19. Define paleta de cores
+20. Adiciona tag v1.0.0
